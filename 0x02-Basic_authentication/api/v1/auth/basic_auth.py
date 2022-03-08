@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Basic auth"""
 from api.v1.auth.auth import Auth
-
+from typing import TypeVar
+from base64 import b64decode
+from models.user import User
 
 class BasicAuth(Auth):
     """ BasicAuth class """

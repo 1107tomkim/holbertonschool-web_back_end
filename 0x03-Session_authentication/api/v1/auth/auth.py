@@ -31,3 +31,12 @@ class Auth():
         def method current user that returns None - request
         """
         return (None)
+
+    def session_cookie(self, request=None):
+        """
+        def method session cookie returns val from request
+        """
+        if request is None:
+            return None
+        crumbs = getenv('SESSION_NAME')
+        return request.cookies.get(crumbs)

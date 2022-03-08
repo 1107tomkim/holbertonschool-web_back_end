@@ -5,6 +5,7 @@ from typing import TypeVar
 from base64 import b64decode
 from models.user import User
 
+
 class BasicAuth(Auth):
     """ BasicAuth class """
     def extract_base64_authorization_header(self, authorization_header: str
@@ -29,6 +30,7 @@ class BasicAuth(Auth):
             return b64decode(base64_authorization_header).decode("utf-8")
         except Exception:
             return None
+
     def extract_user_credentials(self, decoded_base64_authorization_header: str
                                  ) -> (str, str):
         """ returns the user email and pw from Base64

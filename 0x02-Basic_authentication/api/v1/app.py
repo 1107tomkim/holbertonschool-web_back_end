@@ -13,6 +13,15 @@ app = Flask(__name__)
 app.register_blueprint(app_views)
 CORS(app, resources={r"/api/v1/*": {"origins": "*"}})
 
+app = Flask(__name__)
+app.register_blueprint(app_views)
+CORS(app, resources={"/api/v1/*": {"origins": "*"}})
+
+auth = None
+at = getenv("AUTH_TYPE")
+if at == "auth":
+    from api.v1.auth.auth import Auth
+    auth = Auth()
 
 @app.errorhandler(404)
 def not_found(error) -> str:

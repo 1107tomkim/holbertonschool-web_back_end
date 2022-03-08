@@ -20,7 +20,7 @@ if at == "auth":
     from api.v1.auth.auth import Auth
     auth = Auth()
 if at == "basic_auth":
-    from api.v1.auth.auth import BasicAuth
+    from api.v1.basic.auth import BasicAuth
     auth = BasicAuth()
 
 

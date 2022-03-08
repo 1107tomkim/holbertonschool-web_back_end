@@ -23,6 +23,7 @@ if at == "auth":
     from api.v1.auth.auth import Auth
     auth = Auth()
 
+
 @app.errorhandler(404)
 def not_found(error) -> str:
     """ Not found handler
@@ -42,6 +43,11 @@ def forbidden(error) -> str:
     """ Forbidden item
     """
     return jsonify({"error": "Forbidden"}), 403
+
+
+@app.before_request
+def before_request():
+    at = ["/api/v1/status/", "/api/v1/unauthorized", "/api/v1/forbidden"]
 
 
 if __name__ == "__main__":

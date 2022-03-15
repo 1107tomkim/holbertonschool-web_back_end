@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+""" 8-all.py """
 from pymongo import MongoClient
 
 

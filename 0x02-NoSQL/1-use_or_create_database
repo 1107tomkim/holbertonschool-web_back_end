@@ -1,1 +1,2 @@
+// Script that creates or uses the db
 use my_db

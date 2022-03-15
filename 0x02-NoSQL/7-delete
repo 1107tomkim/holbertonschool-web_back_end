@@ -1,1 +1,2 @@
+// Script that deletes name="Holberton school" doc from "school" collection
 db.school.deleteMany({name: "Holberton school"})

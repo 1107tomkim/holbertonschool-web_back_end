@@ -1,1 +1,2 @@
+// Script that lists all doc with specific name in collection school
 db.school.find({name: "Holberton school"})

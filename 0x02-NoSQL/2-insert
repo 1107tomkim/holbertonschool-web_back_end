@@ -1,1 +1,3 @@
+// Script that inserts a doc in collection school
+// Document has attribute "name" with val "Holberton school"
 db.school.insert({name: "Holberton school"})

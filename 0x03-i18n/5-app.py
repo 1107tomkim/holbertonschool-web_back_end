@@ -24,7 +24,7 @@ app.config.from_object(Config)
 
 
 def get_user():
-    """get user"""
+    """get user from header"""
     id = request.args.get('login_as')
     try:
         return users.get(int(id))
@@ -40,10 +40,10 @@ def before_request():
 
 @babel.localeselector
 def get_locale():
-    """locale selector"""
-    locle= request.args.get('locale')
-    if locle and locle in app.config['LANGUAGES']:
-        return locle
+    """locale selector determining lang use for template"""
+    loc= request.args.get('locale')
+    if loc and loc in app.config['LANGUAGES']:
+        return loc
     return request.accept_languages.best_match(Config.LANGUAGES)
 
 
